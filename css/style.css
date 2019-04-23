@@ -6,7 +6,7 @@
   
 }
 body{
-  background:#02b296;
+  background:#007799;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -20,10 +20,10 @@ body{
 }
 .hat{
   position:absolute;
-  background:#ef5c53;
+  background:#9999FF;
   width:100%;
   height:90px;
-  top:30px;
+  top:40px;
   border-radius: 100px 100px 0 0;
   box-shadow:inset 30px 0 20px rgba(0,0,0,0.1);
   z-index:1;
@@ -31,7 +31,7 @@ body{
 .hat:before{
   content:'';
   position:absolute;
-  background:#fff;
+  background:#CCBBFF;
   width:40px;
   height:40px;
   top:-30px;
@@ -44,7 +44,7 @@ body{
 .hat:after{
   content:'';
   position:absolute;
-  background:#fff;
+  background:#E38EFF;
   width:120%;
   height:48px;
   top:90px;
@@ -105,27 +105,79 @@ body{
 .eye.right{
   right:55px;
 }
+.glass{
+  position:absolute;
+  width:50px;
+  height:25px;
+  background:linear-gradient(to bottom,#fff 0%,#000 80%);
+  top:30px;
+  border-radius:0 0 50% 50%/0 0 100% 100%;
+  animation: bounce 1s cubic-bezier(1,.5,.5,.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  
+  
+}
+.glass.left{
+  left:30px;
+}
+.midglass{
+  position:absolute;
+  width:300px;
+  height:8px;
+  background:#444;
+  top:30px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  animation: bounce1 1s cubic-bezier(1,.5,.5,.5);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  
+
+}
+.glass.right{
+  right:30px;
+  
+}
 .nose{
   position:absolute;
   width:30px;
   height:30px;
   background:#ef5c53;
-  top:48px;
+  top:45px;
   left:0;
   right:0;
   margin:0 auto;
   border-radius:50%;
   }
+.smoke{
+  position:absolute;
+  width:100px;
+  height:10px;
+  background:linear-gradient(to left,red 10%,#7b7b7b 0%);
+  top:270px;
+  left:120px;
+  right:0;
+  margin:0 auto;
+  z-index:2;
+  transition:all 2s cubic-bezier(0.645,0.045,0.355,1) 0.2s;
+  }
+.smoke:hover{
+  transform:rotate(-45deg);
+  margin-top:-50px;
+}
 .beard{
   position:absolute;
   width:100%;
   height:180px;
-  background:#f4f4f4;
+  background:#000;
   bottom:0;
   border-radius:0 0 200px 200px;
   box-shadow:inset 0 -20px 20px rgba(0,0,0,0.1);
   z-index:-1;
 }
+
 
 @import url('https://fonts.googleapis.com/css?family=Dokdo');
 
@@ -133,4 +185,12 @@ h1{
   font-family:'Dokdo',cursive;
   font-size:36px;
   color:#fff;
+}
+@keyframes bounce {
+  from { transform: translate(0, 0);     }
+  to   { transform: translate(0, 25px); }
+}
+@keyframes bounce1 {
+  from { transform: translate(0, 0);     }
+  to   { transform: translate(0, 25px); }
 }
